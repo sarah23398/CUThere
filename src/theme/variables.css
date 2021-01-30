@@ -230,3 +230,21 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 }
+
+/* Custom Classes */
+.content-margin{
+  margin-top: 5%;
+}
+
+.courselist{
+  max-width: 80%;
+  margin:0 auto;
+  margin-top: 2%;
+  padding:3%;
+}
+
+@media only screen and (max-width: 992px) {
+  .courselist {
+    max-width: 80%;
+  }
+}
