@@ -1,0 +1,10 @@
+.gitignore
+.npmignore
+.jscsrc
+.jshintrc
+
+.travis.yml
+spec
+coverage
+
+sample
