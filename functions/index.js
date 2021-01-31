@@ -2,22 +2,24 @@ const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");
 
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-    // get from app console
-  });
-  //firebase.analytics();
-  
-  var db = firebase.firestore();
+const config = require("./util/config");
+const express = require("express");
+const app = express();
 
-  db.collection("users")
-    .get()
-    .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-        });
-    })
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
+app.use(express.json());
+
+// Initialize Cloud Firestore through Firebase
+firebase.initializeApp(config);
+  //firebase.analytics();
+
+  const usersRoute = require("./api/users/users");
+  const coursesRoute = require("./api/courses/courses");
+  const societiesRoute = require("./api/societies/societies");
+
+  app.use("/api/users", usersRoute);
+  app.use("/api/courses", coursesRoute);
+  app.use("/api/societies", societiesRoute);
+
+app.listen(5000, () =>{
+    console.log("Listening on port 5000");
+})
