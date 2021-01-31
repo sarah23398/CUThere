@@ -97,7 +97,7 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-
+    
     const {email, password} = req.body;
 
     firebase.auth().signInWithEmailAndPassword(email, password)

@@ -7,8 +7,8 @@ import RightSide from './RightSide';
 
 
 const Tab4: React.FC = () => {
-    const [username, setUsername] = useState('')
-    const [password] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
 
   return (
@@ -23,7 +23,7 @@ const Tab4: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen className="ion-text-center">
         
-        <IonRow className="landing row" onChange={(e:any) => setUsername(e.target.value)}>
+        <IonRow className="landing row" onChange={(e:any) => setEmail(e.target.value)}>
             <IonCol className="col"><LeftSide /></IonCol>
             <IonCol className="col"><RightSide /></IonCol>
         </IonRow>

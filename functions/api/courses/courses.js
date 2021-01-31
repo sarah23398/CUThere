@@ -9,7 +9,7 @@ const db = firebase.firestore();
 const coursesRef = db.collection("courses");
 
 router.get("/", (req, res) => {
-
+    
     let courses = [];
     coursesRef 
     .get()
