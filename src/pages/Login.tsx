@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import Button from 'react-bootstrap/Button'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { useState } from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonRow, IonCol } from '@ionic/react';
 import './Login.css';
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
-import { Col, Row } from 'react-bootstrap';
 
 
 const Tab4: React.FC = () => {
     const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [password] = useState('')
 
-    function loginUser(){
-        console.log(username, password)
-    }
 
   return (
     <IonPage>
@@ -26,10 +19,10 @@ const Tab4: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen className="ion-text-center">
         
-        <Row className="landing row" onChange={(e:any) => setUsername(e.target.value)}>
-            <Col className="col"><LeftSide /></Col>
-            <Col className="col"><RightSide /></Col>
-        </Row>
+        <IonRow className="landing row" onChange={(e:any) => setUsername(e.target.value)}>
+            <IonCol className="col"><LeftSide /></IonCol>
+            <IonCol className="col"><RightSide /></IonCol>
+        </IonRow>
 
         {/* <IonInput 
             placeholder="Username?" 
