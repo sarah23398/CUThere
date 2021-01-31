@@ -17,7 +17,7 @@ const Tab4: React.FC = () => {
         <IonToolbar>
           <div className = "header">
           <IonTitle className="title" color="primary">Welcome to CUThere!</IonTitle>
-          <IonLabel className="subtitle">Calender for YOUR semester </IonLabel>
+          <IonLabel className="subtitle">Personalized Calendar for YOUR semester </IonLabel>
           </div>
         </IonToolbar>
       </IonHeader>
