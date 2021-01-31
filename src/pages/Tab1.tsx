@@ -6,7 +6,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from '../event-utils'
 import '../main.css'
 
-export default class DemoApp extends React.Component {
+export default class Tab1 extends React.Component {  
 
   state = {
     weekendsVisible: true,
