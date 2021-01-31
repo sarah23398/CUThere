@@ -50,24 +50,27 @@ const LeftSide = () => {
     return(
         <div className="template">
             <form>
-            <IonItem>
-                <IonLabel position="floating">Email</IonLabel>
+            <IonItem className="label1">
+                <IonLabel className = "label" color = "primary"  position = "floating">Username/Email</IonLabel>
                 <IonInput onIonChange = {handleEmailChange}/>
             </IonItem>
             <IonItem>
-                <IonLabel position="floating">Password</IonLabel>
-                <IonInput type="password" onIonChange = {handlePasswordChange} />
+                <IonLabel className = "label"  color = "primary"  position="floating">Password</IonLabel>
+                <IonInput type="password" onIonChange = {handlePasswordChange}  />
             </IonItem>
             <IonItem lines="none">
-                <IonLabel>Remember me</IonLabel>
+                <IonLabel className ="rem" color="primary">Remember me</IonLabel>
                 <IonCheckbox defaultChecked={true} slot="start" />
             </IonItem>
-
+            
             <IonButton className="buttons" variant="primary" type="" onClick={() => loginUser()}>
-                Login
+            <IonLabel className="loginButton" >Login</IonLabel>
+
             </IonButton>
 
-            <IonButton className="buttons" >Sign Up</IonButton>
+            <IonButton className="buttons" >
+            <IonLabel className="loginButton" >Sign Up</IonLabel>
+            </IonButton>
             </form>
         </div>
     )
