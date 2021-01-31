@@ -1,29 +1,182 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import FullCalendar, { formatDate } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import { INITIAL_EVENTS, createEventId } from '../event-utils'
+//import { INITIAL_EVENTS, createEventId } from '../event-utils'
 import '../main.css'
 import axios from 'axios'
+import { batteryDeadOutline } from 'ionicons/icons'
+
+let eventGuid = 0
+let todayStr = new Date().toISOString().replace(/T.*$/, '') // YYYY-MM-DD of today
+
 
 export default class Tab1 extends React.Component {  
 
   state = {
     weekendsVisible: true,
-    currentEvents: []
+    currentEvents: [],
+    userData: {
+      courses: [
+
+      ]
+    },
+    courseInfo: [
+      
+      {'course-id': "",
+        assignments: [
+        {
+          name: "",
+          deadline: "" 
+        }
+      ],
+      exam: [
+        {
+          name: "",
+          from: "",
+          to: "" 
+        }
+      ],
+      'ta-office-hours': 
+      [
+        {
+        day: "",
+        name: "",
+        to: "",
+        from: ""
+        }
+      ],
+      'class-times': 
+      [
+        {
+        day: "",
+        to: "",
+        from: ""
+        }
+      ]
+    },
+    ],
+    events: [
+      {
+        id: createEventId(),
+        title: 'All-day event',
+        start: todayStr
+      },
+      {
+        id: createEventId(),
+        title: 'Timed event',
+        start: todayStr + 'T12:00:00'
+      },
+    
+    ]
+
   }
 
   componentDidMount() {
     console.log("Hello World")
     axios.get('/api/users')
     .then(res => {
-      console.log(res);
+      
+      this.setState({userData: res.data[0]}); 
+
+      this.state.userData.courses.forEach(async (course) => {
+        
+        axios.get(`/api/courses/${course}`)
+        .then(res => {
+
+          let course = res.data;
+          
+          this.setState({ 
+            courseInfo: [...this.state.courseInfo, course] 
+          });
+
+          this.state.courseInfo.forEach(course => {
+      
+            course.assignments.forEach(assignment => {
+              
+              console.log("Assignment: " + assignment.deadline.replace(/T.*$/, ''));
+              console.log(todayStr);
+              
+              this.setState({
+                events: [...this.state.events, {
+                  id: createEventId(),
+                  title: assignment.name, 
+                  // new Date().toISOString().replace(/T.*$/, '')
+                  start: assignment.deadline.replace(/T.*$/, ''),
+                  
+                }]
+              })
+
+            });
+
+            course.exam.forEach(exam => {
+              
+              this.setState({
+                events: [...this.state.events, {
+                  id: createEventId(),
+                  title: exam.name, 
+                  // new Date().toISOString().replace(/T.*$/, '')
+                  start: exam.from,
+                  end: exam.to,
+                  
+                }]
+              })
+
+            });
+            
+            course['ta-office-hours'].forEach(officeHours => {
+              //console.log(officeHours.name)
+              this.setState({
+                events: [...this.state.events, {
+                  id: createEventId(),
+                  daysOfWeek: [officeHours.day],
+                  title: officeHours.name, 
+                  // new Date().toISOString().replace(/T.*$/, '')
+                  startTime: officeHours.from,
+                  endTime: officeHours.to,
+                  //startRecur: todayStr
+                  
+                }]
+              })
+
+            });
+
+            course['class-times'].forEach(lecture => {
+              //console.log(officeHours.name)
+              this.setState({
+                events: [...this.state.events, {
+                  id: createEventId(),
+                  daysOfWeek: [lecture.day],
+                  title: course['course-id'], 
+                  // new Date().toISOString().replace(/T.*$/, '')
+                  startTime: lecture.from,
+                  endTime: lecture.to,
+                  //startRecur: todayStr
+                  
+                }]
+              })
+
+            });
+            
+          });
+          
+          
+        })
+        .catch(err => {
+          console.log(err);
+        });
+
+      });
+      
+
     })
     .catch(err => {
       console.log(err);
     });
-  }
+
+  };
+  
 
   render() {
     return (
@@ -43,7 +196,8 @@ export default class Tab1 extends React.Component {
             selectMirror={true}
             dayMaxEvents={true}
             weekends={this.state.weekendsVisible}
-            initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+            events = {this.state.events}
+            initialEvents={this.state.events} // alternatively, use the `events` setting to fetch from a feed
             select={this.handleDateSelect}
             eventContent={renderEventContent} // custom render function
             eventClick={this.handleEventClick}
@@ -138,4 +292,10 @@ function renderSidebarEvent(event:any) {
       <i>{event.title}</i>
     </li>
   )
+}
+
+
+
+function createEventId() {
+  return String(eventGuid++)
 }
