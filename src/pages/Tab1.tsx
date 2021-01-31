@@ -5,12 +5,24 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from '../event-utils'
 import '../main.css'
+import axios from 'axios'
 
 export default class Tab1 extends React.Component {  
 
   state = {
     weekendsVisible: true,
     currentEvents: []
+  }
+
+  componentDidMount() {
+    console.log("Hello World")
+    axios.get('/api/users')
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
   render() {
