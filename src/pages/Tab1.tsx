@@ -46,28 +46,34 @@ export default class Tab1 extends React.Component {
     return (
       <div className='demo-app-sidebar'>
         <div className='demo-app-sidebar-section'>
-          <h2>Instructions</h2>
-          <ul>
+          <h2 className="headings">Instructions</h2>
+          <ul className="list">
             <li>Select dates and you will be prompted to create a new event</li>
             <li>Drag, drop, and resize events</li>
             <li>Click an event to delete it</li>
           </ul>
+          <hr className="solid"></hr>
         </div>
+        
         <div className='demo-app-sidebar-section'>
-          <label>
-            <input
-              type='checkbox'
-              checked={this.state.weekendsVisible}
-              onChange={this.handleWeekendsToggle}
-            ></input>
-            toggle weekends
-          </label>
-        </div>
-        <div className='demo-app-sidebar-section'>
-          <h2>All Events ({this.state.currentEvents.length})</h2>
+          <h2 className="headings">All Events ({this.state.currentEvents.length})</h2>
           <ul>
             {this.state.currentEvents.map(renderSidebarEvent)}
           </ul>
+          
+          <hr className="solid"></hr>
+        </div>
+
+        <div className='demo-app-sidebar-section'>
+          <label>
+            <input
+              type='checkbox' 
+              checked={this.state.weekendsVisible}
+              onChange={this.handleWeekendsToggle}
+            ></input>
+            <span className="toggle">Include weekends in your calendar</span>
+          </label>
+          <hr className="solid"></hr>
         </div>
       </div>
     )
