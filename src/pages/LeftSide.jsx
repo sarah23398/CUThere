@@ -1,38 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import Bootstrap from "react-bootstrap";
-import Button from 'react-bootstrap/Button'
-import { Form, Col, FormGroup, Checkbox } from 'react-bootstrap'
+import React, { useState } from 'react';
+import { IonButton, IonItem, IonLabel, IonCheckbox, IonInput } from '@ionic/react';
 import './LeftSide.css';
 
 const LeftSide = () => {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username] = useState('')
+    const [password] = useState('')
 
     function loginUser(){
         console.log(username, password)
     }
     return(
         <div className="template">
-            <Form>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label className="labels">Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                We won't send you spam. Pinky swear.
-                </Form.Text>
-            </Form.Group>
+            <form>
+            <IonItem className="label1">
+                <IonLabel className = "label" color = "primary"  position = "floating">Username/Email</IonLabel>
+                <IonInput />
+            </IonItem>
+            <IonItem>
+                <IonLabel className = "label"  color = "primary"  position="floating">Password</IonLabel>
+                <IonInput type="password" />
+            </IonItem>
+            <IonItem lines="none">
+                <IonLabel className ="rem" color="primary">Remember me</IonLabel>
+                <IonCheckbox defaultChecked={true} slot="start" />
+            </IonItem>
+            
+            <IonButton className="buttons" color="primary" variant="primary" type="" onClick={loginUser}>
+            <IonLabel className="loginButton" >Login</IonLabel>
+            </IonButton>
 
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label className="labels">Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-
-            <Button className="buttons" variant="primary" type="" onClick={loginUser}>
-                Login
-            </Button>
-
-            <Button className="buttons" >Sign Up</Button>
-            </Form>
+            <IonButton className="buttons" >
+            <IonLabel className="loginButton" >Sign Up</IonLabel>
+            </IonButton>
+            </form>
         </div>
     )
 }

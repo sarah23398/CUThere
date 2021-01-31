@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet');
 
+
 .template{
     margin:10%;
     margin-top: 40%;
@@ -13,5 +14,44 @@
     float:left;
     margin: 2px;
     color:white;
-    background-color: #D08510;
+    width: 150px;
+    height: 50px;
+    left: 479px;
+    top: 824px;
+    --ion-color-primary: #D08510;
+}
+
+.loginButton{
+    --ion-font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+
+    font-style: normal;
+    font-weight: 500;
+    
+    line-height: 62px;
+
+}
+.lable1{
+    height: 181px;
+}
+.rem{
+    --ion-color-primary:#4B5070;
+}
+
+.label{
+    --ion-color-primary: #D08510;
+    --ion-color-primary-tint: #D08510;
+    --ion-color-primary-shadow: #D08510;
+
+
+}
+
+.signup{
+    --ion-font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+
+    font-style: normal;
+    font-weight: 500;
+    
+    line-height: 62px;
 }
