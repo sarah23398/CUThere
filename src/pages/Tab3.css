@@ -1,5 +1,7 @@
+
 .cards{
     position: inherit;
+    background-color: #4B5070;
 }
 
 
@@ -31,17 +33,17 @@ ion-header{
     float:right;
 }
 
-.Buttons ion-button{
-    margin:1%;
-}
+
 
 .ionCards ion-title{
-    color:black;
+    font-family: 'DM Sans', sans-serif;
+    left: 313px;
+    top: 140px;
+    font-size: 72px
+    
 }
 
-.ionCards ion-button{
-    float:right;
-}
+
 
 
 .ionCards{
@@ -62,3 +64,22 @@ ion-header{
     float: left;
     width: 50%;
 }
+
+/* Solid border */
+hr.solidline {
+    border-top: 2px solid #D08510;
+  }
+  
+.cardTitle{
+    font-size: 20px;
+}
+
+.t1{
+    float: left;
+    width: 80%
+}
+.b1{
+    float: left;
+    width: 20%;
+    color: #D61215;
+}    

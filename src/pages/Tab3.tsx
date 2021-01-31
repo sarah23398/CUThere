@@ -78,45 +78,133 @@ const Tab3: React.FC = () => {
     
     <IonContent className="cards">
     <div className = "ionCards">
-    <IonTitle>Clubs and Societies</IonTitle>
-    <IonCard>
+    <IonTitle color="secondary">Clubs and Societies
+    <hr className="solidline"></hr>
+    </IonTitle>
+    
+    <IonCard className="cards">
+
         <IonCardHeader>
-        <IonButton>Added</IonButton>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-          <IonCardTitle>Card Title</IonCardTitle>
+          <div>
+            <div className="t1">
+            <IonCardSubtitle color="primary">Card Subtitle</IonCardSubtitle>
+              <IonCardTitle className="cardTitle" color="tertiary">
+                Carleton University Debate Society
+              </IonCardTitle>
+
+            </div>
+            <div className="b1">
+              <IonButton fill ="outline" color="success" expand="block">
+                <IonLabel color="tertiary"> Added
+                </IonLabel>
+              </IonButton>
+              
+            </div>
+          </div>
         </IonCardHeader>
-
         <IonCardContent>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          <h6>
+            <IonCardSubtitle color="primary">
+              <u>
+                Upcomming Event: BP training seminar
+              </u>
+            </IonCardSubtitle>
+          </h6>
         </IonCardContent>
-
-        
     </IonCard>
-    <IonCard className = "cards">
-        <IonCardHeader>
-        <IonButton>Add</IonButton>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-          <IonCardTitle>Card Title</IonCardTitle>
-        </IonCardHeader>
 
-        <IonCardContent>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </IonCardContent>
-      </IonCard>
-      <IonCard  className = "cards">
-        <IonCardHeader>
-        <IonButton>Add</IonButton>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-          <IonCardTitle>Card Title</IonCardTitle>
-        </IonCardHeader>
+    <IonCard className="cards">
 
+        <IonCardHeader>
+          <div>
+            <div className="t1">
+            <IonCardSubtitle color="primary">Card Subtitle</IonCardSubtitle>
+              <IonCardTitle className="cardTitle" color="tertiary">
+                Carleton University Debate Society
+              </IonCardTitle>
+
+            </div>
+            <div className="b1">
+              <IonButton fill ="solid" color="success" expand="block">
+                <IonLabel color="tertiary"> Add
+                </IonLabel>
+              </IonButton>
+              
+            </div>
+          </div>
+        </IonCardHeader>
         <IonCardContent>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          <h6>
+            <IonCardSubtitle color="primary">
+              <u>
+                Upcomming Event: BP training seminar
+              </u>
+            </IonCardSubtitle>
+          </h6>
         </IonCardContent>
-      </IonCard>
+    </IonCard>
+
+    <IonCard className="cards">
+
+        <IonCardHeader>
+          <div>
+            <div className="t1">
+            <IonCardSubtitle color="primary">Card Subtitle</IonCardSubtitle>
+              <IonCardTitle className="cardTitle" color="tertiary">
+                Carleton University Debate Society
+              </IonCardTitle>
+
+            </div>
+            <div className="b1">
+              <IonButton fill ="solid" color="success" expand="block">
+                <IonLabel color="tertiary"> Add
+                </IonLabel>
+              </IonButton>
+              
+            </div>
+          </div>
+        </IonCardHeader>
+        <IonCardContent>
+          <h6>
+            <IonCardSubtitle color="primary">
+              <u>
+                Upcomming Event: BP training seminar
+              </u>
+            </IonCardSubtitle>
+          </h6>
+        </IonCardContent>
+    </IonCard>
+
+    <IonCard className="cards">
+
+        <IonCardHeader>
+          <div>
+            <div className="t1">
+            <IonCardSubtitle color="primary">Card Subtitle</IonCardSubtitle>
+              <IonCardTitle className="cardTitle" color="tertiary">
+                Carleton University Debate Society
+              </IonCardTitle>
+
+            </div>
+            <div className="b1">
+              <IonButton fill ="solid" color="success" expand="block">
+                <IonLabel color="tertiary"> Add
+                </IonLabel>
+              </IonButton>
+              
+            </div>
+          </div>
+        </IonCardHeader>
+        <IonCardContent>
+          <h6>
+            <IonCardSubtitle color="primary">
+              <u>
+                Upcomming Event: BP training seminar
+              </u>
+            </IonCardSubtitle>
+          </h6>
+        </IonCardContent>
+    </IonCard>
       </div>
       </IonContent>
 
