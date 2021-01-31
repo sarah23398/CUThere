@@ -12,24 +12,26 @@ const LeftSide = () => {
     return(
         <div className="template">
             <form>
-            <IonItem>
-                <IonLabel position="floating">Username</IonLabel>
+            <IonItem className="label1">
+                <IonLabel className = "label" color = "primary"  position = "floating">Username/Email</IonLabel>
                 <IonInput />
             </IonItem>
             <IonItem>
-                <IonLabel position="floating">Password</IonLabel>
+                <IonLabel className = "label"  color = "primary"  position="floating">Password</IonLabel>
                 <IonInput type="password" />
             </IonItem>
             <IonItem lines="none">
-                <IonLabel>Remember me</IonLabel>
+                <IonLabel className ="rem" color="primary">Remember me</IonLabel>
                 <IonCheckbox defaultChecked={true} slot="start" />
             </IonItem>
-
-            <IonButton className="buttons" variant="primary" type="" onClick={loginUser}>
-                Login
+            
+            <IonButton className="buttons" color="primary" variant="primary" type="" onClick={loginUser}>
+            <IonLabel className="loginButton" >Login</IonLabel>
             </IonButton>
 
-            <IonButton className="buttons" >Sign Up</IonButton>
+            <IonButton className="buttons" >
+            <IonLabel className="loginButton" >Sign Up</IonLabel>
+            </IonButton>
             </form>
         </div>
     )
