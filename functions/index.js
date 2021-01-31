@@ -8,7 +8,7 @@ const app = express();
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors); 
+app.use(cors()); 
 
 // Initialize Cloud Firestore through Firebase
 firebase.initializeApp(config);
@@ -22,6 +22,6 @@ firebase.initializeApp(config);
   app.use("/api/courses", coursesRoute);
   app.use("/api/societies", societiesRoute);
 
-app.listen(5000, () =>{
-    console.log("Listening on port 5000");
+app.listen(5001, () =>{
+    console.log("Listening on port 5001");
 })
