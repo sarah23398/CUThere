@@ -1,6 +1,9 @@
 # CUThere
 Submission for CUHacking 2021
 
+Youtube Demo: https://youtu.be/BDsY8BH60LQ
+Our idea didn't come through sadly but you can see the app walkthrough.
+
 Sarah, Ayusha, Siam and David
 
 CUThere: built using React, Ionic and Firebase
