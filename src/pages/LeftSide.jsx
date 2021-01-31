@@ -25,7 +25,7 @@ const LeftSide = () => {
                 <IonCheckbox defaultChecked={true} slot="start" />
             </IonItem>
             
-            <IonButton className="buttons" color="primary" variant="primary" type="" onClick={loginUser}>
+            <IonButton className="buttons" variant="primary" type="" onClick={loginUser}>
             <IonLabel className="loginButton" >Login</IonLabel>
             </IonButton>
 
