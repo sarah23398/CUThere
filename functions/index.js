@@ -5,8 +5,10 @@ require("firebase/firestore");
 const config = require("./util/config");
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 app.use(express.json());
+app.use(cors); 
 
 // Initialize Cloud Firestore through Firebase
 firebase.initializeApp(config);
