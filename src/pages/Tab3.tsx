@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { IonCardTitle, IonCardHeader,IonCardSubtitle,IonButtons,IonMenuToggle,IonListHeader,IonContent, IonHeader,IonCard,IonItemDivider,IonCheckbox,IonItem,IonMenu,IonList,IonRouterOutlet, IonIcon, IonLabel, IonButton, IonCardContent, IonPage, IonTitle, IonToolbar, IonApp, IonSplitPane } from '@ionic/react';
+import { IonCardTitle, IonCardHeader,IonCardSubtitle,IonButtons,IonMenuToggle,IonListHeader,IonContent, IonHeader,IonCard,IonItemDivider,IonCheckbox,IonItem,IonMenu,IonList,IonRouterOutlet, IonIcon, IonLabel, IonButton, IonCardContent, IonPage, IonTitle, IonToolbar, IonApp, IonSplitPane, IonSearchbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import { INITIAL_EVENTS, createEventId } from '../event-utils'
 import './Tab3.css';
@@ -64,7 +64,9 @@ const Tab3: React.FC = () => {
             </IonButton>
           </IonMenuToggle>
         </IonButtons>
-        
+
+        <IonSearchbar className="searchBar"></IonSearchbar>
+
 
         <div className = "Buttons">
           <IonButton>Settings</IonButton>
@@ -79,6 +81,7 @@ const Tab3: React.FC = () => {
     <IonTitle>Clubs and Societies</IonTitle>
     <IonCard>
         <IonCardHeader>
+        <IonButton>Added</IonButton>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           <IonCardTitle>Card Title</IonCardTitle>
         </IonCardHeader>
@@ -87,9 +90,12 @@ const Tab3: React.FC = () => {
           Keep close to Nature's heart... and break clear away, once in awhile,
           and climb a mountain or spend a week in the woods. Wash your spirit clean.
         </IonCardContent>
+
+        
     </IonCard>
     <IonCard className = "cards">
         <IonCardHeader>
+        <IonButton>Add</IonButton>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           <IonCardTitle>Card Title</IonCardTitle>
         </IonCardHeader>
@@ -101,6 +107,7 @@ const Tab3: React.FC = () => {
       </IonCard>
       <IonCard  className = "cards">
         <IonCardHeader>
+        <IonButton>Add</IonButton>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           <IonCardTitle>Card Title</IonCardTitle>
         </IonCardHeader>

@@ -39,6 +39,10 @@ ion-header{
     color:black;
 }
 
+.ionCards ion-button{
+    float:right;
+}
+
 
 .ionCards{
     margin-left: 10%;
@@ -50,4 +54,11 @@ ion-header{
 
 .sidebar{
     width: 5%;
+}
+
+.searchBar{
+    margin:1%;
+    margin-top: 2%;
+    float: left;
+    width: 50%;
 }
