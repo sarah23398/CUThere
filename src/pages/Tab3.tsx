@@ -13,28 +13,31 @@ const checkboxList = [
 
 const Tab3: React.FC = () => {
   return(
-  //   <div id="test">
-  //     <h1>Hello World</h1>
-  //   </div>
-
-  //   <div id = "test">
-  //     <h2></h2>
-  //   </div>
-  // )
-  // return React.createElement(
-  //   'div',
-  //   {id:'test', className:"dummyClass"},
-  //  )
-
-  
+ 
   <IonApp>
     <IonContent>
-    <IonSplitPane contentId="main" >
+    <IonSplitPane contentId="main">
     <IonMenu contentId="main" type="push" className="sidebar">
 
-    <IonHeader>
-      <IonToolbar color="primary" className="toolbar">
-        <IonTitle>Menu</IonTitle>
+    <IonHeader >
+      <IonToolbar className="toolbar" color="light">
+        <div>
+          <div className= "personIcon">
+          <IonIcon slot="start" name='person' color="tertiary" ></IonIcon>
+
+          </div>
+
+       
+          
+          <IonTitle className="name">
+          
+            <h2>Kanye West</h2>
+          </IonTitle>
+          <span className="role"> Student </span>
+          <hr className="solidline"></hr>
+
+        </div>
+        
       </IonToolbar>
     </IonHeader>
 
@@ -42,21 +45,60 @@ const Tab3: React.FC = () => {
       <IonList>
         <IonMenuToggle auto-hide="false">
           <IonItem button>
-            <IonIcon slot="start" name='home'></IonIcon>
+            <IonIcon slot="start" name='home' color="tertiary"></IonIcon>
             <IonLabel>
-              Home
+              Calendar
             </IonLabel>
           </IonItem>
         </IonMenuToggle>
+        <IonMenuToggle auto-hide="false">
+          <IonItem button>
+            <IonIcon slot="start" name='home' color="tertiary"></IonIcon>
+            <IonLabel>
+              Courses
+            </IonLabel>
+           
+          </IonItem>
+          <IonItem>
+          <ul className="list">
+            <b>
+            <li> COMP 2005</li>
+              <li> COMP 245</li>
+              <li> COMP 2406</li>
+              <li> LAW 1001</li>
+              <li> ECON 1002</li>
+
+            </b>
+              
+            </ul>
+          </IonItem>
+          
+          
+        </IonMenuToggle>
+        <IonMenuToggle auto-hide="false">
+          <IonItem button>
+            <IonIcon slot="start" name='home' color="tertiary"></IonIcon>
+            <IonLabel>
+              Clubs and Societies 
+            </IonLabel>
+          </IonItem>
+          <IonItem>
+          <ul className="list">
+              <li><b> Carleton Debating Society</b></li>
+            </ul>
+          </IonItem>
+        </IonMenuToggle>
+        
       </IonList>
     </IonContent>
+    
   </IonMenu>
   
   
 
-  <IonPage className="ion-page" id="main">
+  <IonPage className="ion-page" id="main" >
     <IonHeader>
-      <IonToolbar className = "headerClass">
+      <IonToolbar className = "headerClass" color="light">
         <IonButtons slot="start">
           <IonMenuToggle>
             <IonButton>
@@ -65,13 +107,15 @@ const Tab3: React.FC = () => {
           </IonMenuToggle>
         </IonButtons>
 
-        <IonSearchbar className="searchBar"></IonSearchbar>
+        <IonSearchbar className="searchBar" color="light"></IonSearchbar>
 
 
         <div className = "Buttons">
-          <IonButton>Settings</IonButton>
-          <IonButton>Settings</IonButton>
-          <IonButton>Settings</IonButton>
+          <IonButton fill ="solid" color="tertiary" expand="block">
+            <IonLabel color="success"> 
+              Log Out
+            </IonLabel>
+          </IonButton>
         </div>
       </IonToolbar>
     </IonHeader>
@@ -87,7 +131,7 @@ const Tab3: React.FC = () => {
         <IonCardHeader>
           <div>
             <div className="t1">
-            <IonCardSubtitle color="primary">Card Subtitle</IonCardSubtitle>
+
               <IonCardTitle className="cardTitle" color="tertiary">
                 Carleton University Debate Society
               </IonCardTitle>
@@ -118,9 +162,9 @@ const Tab3: React.FC = () => {
         <IonCardHeader>
           <div>
             <div className="t1">
-            <IonCardSubtitle color="primary">Card Subtitle</IonCardSubtitle>
+            
               <IonCardTitle className="cardTitle" color="tertiary">
-                Carleton University Debate Society
+                Carleton Computer Science Society
               </IonCardTitle>
 
             </div>
@@ -137,7 +181,7 @@ const Tab3: React.FC = () => {
           <h6>
             <IonCardSubtitle color="primary">
               <u>
-                Upcomming Event: BP training seminar
+                Upcomming Event: Virtual Resume Hack 
               </u>
             </IonCardSubtitle>
           </h6>
@@ -180,9 +224,8 @@ const Tab3: React.FC = () => {
         <IonCardHeader>
           <div>
             <div className="t1">
-            <IonCardSubtitle color="primary">Card Subtitle</IonCardSubtitle>
               <IonCardTitle className="cardTitle" color="tertiary">
-                Carleton University Debate Society
+                Carleton Women In Computer Science
               </IonCardTitle>
 
             </div>
@@ -199,7 +242,7 @@ const Tab3: React.FC = () => {
           <h6>
             <IonCardSubtitle color="primary">
               <u>
-                Upcomming Event: BP training seminar
+                Upcomming Event: Grad Meet and Greet
               </u>
             </IonCardSubtitle>
           </h6>
