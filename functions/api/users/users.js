@@ -104,9 +104,10 @@ router.post("/login", (req, res) => {
     .then((userCredential) => {
         let user = userCredential;
         res.status(200).send(user);
+
     })
     .catch(err => {
-        console.log(error.message);
+        console.log(err.message);
         console.log("Login unsuccessful");
         res.status(400); 
     });
