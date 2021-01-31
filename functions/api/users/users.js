@@ -27,14 +27,42 @@ router.get("/", (req, res) => {
 
 });
 
+/*
+Returns data of a student with a specific student id
+*/
+
+router.get("/:id", (req, res) => {
+
+    let id = req.params.id;
+    usersRef
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            let user = doc.data();
+            if (user.userId === id || user.user-id === id) {
+                return res.status(200).send(user);
+            }
+        });
+        return res.status(400).send("User not found");
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+        res.status(400).send("User not found");
+    });
+
+
+});
+
 router.post("/", (req, res) => {
 
-    const {email, password, studentId, name, notifications, programDegree, programYear, gender, matchGender, matchProgram, freeTimeSlots, courses, societies} = req.body; 
+    const {email, password, studentId, name, notifications, programDegree, programYear, gender, matchGender, matchProgram, freeTimeSlots, courseIds, societyNames} = req.body; 
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
 
         //Search for courses + societies 
+        let courseList = [];
+        let societyList = [];
 
         const newStudent = {
             email: email,
@@ -51,8 +79,6 @@ router.post("/", (req, res) => {
             freeTimeSlots: freeTimeSlots
         }
 
-        console.log(newStudent);
-
         usersRef.add(newStudent)
         .then(()=> {
             res.status(200).send("User successfully added");
@@ -67,6 +93,21 @@ router.post("/", (req, res) => {
         res.status(400).send("Problem adding user");
     });
     ;
+
+});
+
+router.post("/login", (req, res) => {
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+        let user = userCredential;
+        res.status(200).send("Login Successful");
+    })
+    .catch(err => {
+        console.log(error.message);
+        console.log("Login unsuccessful");
+        res.status(400); 
+    });
 
 });
 
