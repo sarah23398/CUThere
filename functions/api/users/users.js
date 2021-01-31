@@ -98,10 +98,12 @@ router.post("/", (req, res) => {
 
 router.post("/login", (req, res) => {
 
+    const {email, password} = req.body;
+
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
         let user = userCredential;
-        res.status(200).send("Login Successful");
+        res.status(200).send(user);
     })
     .catch(err => {
         console.log(error.message);
