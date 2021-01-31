@@ -35,6 +35,8 @@ ion-header{
 
 
 
+
+
 .ionCards ion-title{
     font-family: 'DM Sans', sans-serif;
     left: 313px;
@@ -43,8 +45,10 @@ ion-header{
     
 }
 
-
-
+ion-menu ion-content{
+   
+        --ion-background-color:#E6AC41
+    }
 
 .ionCards{
     margin-left: 10%;
@@ -55,7 +59,8 @@ ion-header{
 }
 
 .sidebar{
-    width: 5%;
+    width: 20%;
+ 
 }
 
 .searchBar{
@@ -83,3 +88,35 @@ hr.solidline {
     width: 20%;
     color: #D61215;
 }    
+
+.navMenu{
+    padding-top: 30px
+}
+
+.toolbar{
+    padding-top: 100px
+}
+.name{
+
+    padding-left:100px;
+
+}
+.role{
+    padding-left: 130px;
+    color: #EEEDE8
+}
+hr.solidlineNav{
+    border-top: 2px solid #D08510;
+    padding-left:50px;
+}
+
+.list{
+    padding-left:100px;
+    color: #4B5070;
+}
+.personIcon{
+    padding-top:100px;
+    padding-left:150px;
+    font-size: 20px;
+}
+
