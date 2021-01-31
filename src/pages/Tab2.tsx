@@ -1,26 +1,20 @@
-import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React, {useState} from 'react';
+import { IonCardTitle, IonCardHeader,IonCardSubtitle,IonButtons,IonMenuToggle,IonListHeader,IonContent, IonHeader,IonCard,IonItemDivider,IonCheckbox,IonItem,IonMenu,IonList,IonRouterOutlet, IonIcon, IonLabel, IonButton, IonCardContent, IonPage, IonTitle, IonToolbar, IonApp, IonSplitPane } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
+import { INITIAL_EVENTS, createEventId } from '../event-utils'
 import './Tab2.css';
 
-const Tab2: React.FC = () => {
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
-      </IonContent>
-    </IonPage>
-  );
-};
 
-export default Tab2;
+const checkboxList = [
+  { val: 'Pepperoni', isChecked: true },
+  { val: 'Sausage', isChecked: false },
+  { val: 'Mushroom', isChecked: false }
+];
+
+const Tab2: React.FC = () => {
+  return(
+    React.createElement('div')
+  );
+}
+
+export default Tab2

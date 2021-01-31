@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonRow, IonCol } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonRow, IonCol, IonLabel } from '@ionic/react';
 import './Login.css';
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
+
 
 
 const Tab4: React.FC = () => {
@@ -14,7 +15,10 @@ const Tab4: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Login Page</IonTitle>
+          <div className = "header">
+          <IonTitle className="title" color="primary">Welcome to CUThere!</IonTitle>
+          <IonLabel className="subtitle">Personalized Calendar for YOUR semester </IonLabel>
+          </div>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen className="ion-text-center">
